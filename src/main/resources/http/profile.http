@@ -1,0 +1,51 @@
+### Create profle
+POST localhost:8080/api/v1/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiaWQiOiIxMjMiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTUxNjIzOTAyMn0.91xMwUQdODDO4fIXnce6DwJUS5DNkuLzth3AuHXYvEM
+Content-Type:  application/json
+
+{
+  "name": "Valish",
+  "surname": "Valiyev",
+  "email": "vali@mail.ru",
+  "phone": "12134",
+  "password": "123",
+  "role": "MODERATOR"
+}
+
+### update profle
+PUT localhost:8080/api/v1/profile/updateAdmin?id=2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+{
+  "name": "alish",
+  "surname": "Valiyev",
+  "email": "alishxon@mail.ru",
+  "phone": "777",
+  "password": "1111",
+  "role": "PUBLISHER"
+}
+
+### updateAll profle
+PUT localhost:8080/api/v1/profile/6
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+{
+  "name": "Qalish",
+  "surname": "Qaliyev",
+  "email": "Qalishxon@mail.ru",
+  "phone": "888",
+  "password": "1111",
+  "role": "USER"
+}
+
+### pagination profle
+GET localhost:8080/api/v1/profile/pagination?page=1&size=4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+### delete profle
+DELETE localhost:8080/api/v1/profile/11
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
