@@ -1,0 +1,40 @@
+### create article
+POST localhost:8080/api/v1/articleType/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+{
+  "key": "asdfghjk",
+  "nameUz": "muxarrirUz",
+  "nameRu": "журналист",
+  "nameEng": "journalist"
+
+}
+
+### update article
+PUT localhost:8080/api/v1/articleType/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+{
+  "key": "axborot",
+  "nameUz": "muxarrirUz",
+  "nameRu": "журналист",
+  "nameEng": "journalist"
+
+}
+
+### delete article
+DELETE localhost:8080/api/v1/articleType/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+### pagination article
+GET localhost:8080/api/v1/articleType?page=1&size=2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
+
+### getLang article
+GET localhost:8080/api/v1/articleType/getLang?lang=uz
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
+Content-Type:  application/json
