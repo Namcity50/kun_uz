@@ -1,0 +1,91 @@
+### create article
+POST localhost:8080/api/v1/article
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODI5MzEyMDEsImlkIjoxLCJyb2xlIjoiTU9ERVJBVE9SIiwiZXhwIjoxNjgzMDE3NjAxLCJpc3MiOiJLdW51eiB0ZXN0IHBvcnRhbGkifQ.LBvs16uAWHpUdY8mYVKZjcYsiLHdWh6dHl29--PfFi5qZn6c3TBKSyw9dSfzaWYWjJ_jdR6OwniULWM_wtIdpQ
+Content-Type:  application/json
+
+{
+  "title" : "salom",
+  "description": "kdkdkd",
+  "content": "kdkdss",
+  "imageId": "d4466e1a-2d4c-46ff-bf3f-8ee7eb379568",
+  "regionId": "2",
+  "categoryId": "1",
+  "moderatorId": "212"
+}
+
+### update article
+PUT localhost:8080/api/v1/article?id=4ee23f7c-f972-4d41-bcc9-1ed2f547e079
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODI5MjM2MzgsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODMwMTAwMzgsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.9PiVPGbWDSamePVuDSQxOAYeA3kj-QPRje5rsTvwoZPcbHS8haME27P48baPoRe1Ra4_SB3ew5zbtXyJvPTD0g
+Content-Type:  application/json
+
+{
+  "title" : "avriya",
+  "description": "mudxish xodisalar",
+  "content": "vaaaaa",
+  "imageId": "d4466e1a-2d4c-46ff-bf3f-8ee7eb379568",
+  "regionId": "2",
+  "categoryId": "4",
+  "moderatorId": "213"
+}
+
+### delete article id
+DELETE localhost:8080/api/v1/article/be1c2d6a-71d2-40d1-8a9b-009e3aa7efb3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODI5MzEyMDEsImlkIjoxLCJyb2xlIjoiTU9ERVJBVE9SIiwiZXhwIjoxNjgzMDE3NjAxLCJpc3MiOiJLdW51eiB0ZXN0IHBvcnRhbGkifQ.LBvs16uAWHpUdY8mYVKZjcYsiLHdWh6dHl29--PfFi5qZn6c3TBKSyw9dSfzaWYWjJ_jdR6OwniULWM_wtIdpQ
+Content-Type:  application/json
+
+### change status article id
+PUT localhost:8080/api/v1/article/4ee23f7c-f972-4d41-bcc9-1ed2f547e079?status=PUBLISHER
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODI5NDAyODYsImlkIjoyLCJyb2xlIjoiUFVCTElTSEVSIiwiZXhwIjoxNjgzMDI2Njg2LCJpc3MiOiJLdW51eiB0ZXN0IHBvcnRhbGkifQ.Xp6TLF3XLVQY_GQ4JriK9BSCCIEFK8-qPTQC4EZ-zkhhQUHq1ZFYVBepKAs9T6UvjcCofJUb7AKV4-E8hkZxYg
+Content-Type:  application/json
+
+### get 5 Type id
+GET localhost:8080/api/v1/article/3
+Content-Type:  application/json
+
+
+### get 3 Type id
+GET localhost:8080/api/v1/article/get3/3
+Content-Type:  application/json
+
+### get 8 Type id
+GET localhost:8080/api/v1/article/get8?ids=be1c2d6a-71d2-40d1-8a9b-009e3aa7efb3,4ee23f7c-f972-4d41-bcc9-1ed2f547e079
+Content-Type:  application/json
+
+### get Article id and Lang check qilish kerak
+GET localhost:8080/api/v1/article/getLang/4ee23f7c-f972-4d41-bcc9-1ed2f547e079?lang=uz
+Content-Type:  application/json
+
+### get Last 4 ArticleType except article id
+GET localhost:8080/api/v1/article/last/ac9b488f-1894-42c4-b522-3ce2ae59656d
+Content-Type:  application/json
+
+### get 4 most read ArticleType except article id
+GET localhost:8080/api/v1/article/mostRead
+Content-Type:  application/json
+
+### get 4 most read Article tag lang
+GET localhost:8080/api/v1/article/getLangTag?id=2
+Content-Type:  application/json
+
+### get 4  Article region id
+GET localhost:8080/api/v1/article/getKeyRegion?key=3
+Content-Type:  application/json
+
+### get Article region idgetByPaginationRegion
+GET localhost:8080/api/v1/article/getByPaginationRegion?page=2&size=10&key=2
+Content-Type:  application/json
+
+### get 4  Article category id
+GET localhost:8080/api/v1/article/getKeyCategory?key=3
+Content-Type:  application/json
+
+### get Article region idgetByPaginationCategory
+GET localhost:8080/api/v1/article/getByPaginationCategory?page=2&size=10&key=2
+Content-Type:  application/json
+
+### get Add view count
+GET localhost:8080/api/v1/article/viewCount?id=b6ffca42-273b-4898-a735-e2b1f2330f5e
+
+### get Add view count
+GET localhost:8080/api/v1/article/shareCount?id=b6ffca42-273b-4898-a735-e2b1f2330f5e
+

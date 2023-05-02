@@ -12,5 +12,6 @@ public interface EmailHistoryRepository extends CrudRepository<EmailHistoryEntit
     List<EmailHistoryEntity> findAllByEmail(String email);
     List<EmailHistoryEntity> findByCreatedDataBetween(LocalDateTime dateTime, LocalDateTime dateTo);
 
-    Page<EmailHistoryEntity> findAll(Integer id, Pageable pageable);
+    Page<EmailHistoryEntity> findAllBy(Pageable pageable);
+
 }

@@ -1,12 +1,10 @@
 package com.example.controller;
 
-import com.example.dto.RegionDTO;
-import com.example.dto.RegionResponseDTO;
-import com.example.repository.RegionRepository;
+import com.example.dto.region.RegionDTO;
+import com.example.dto.region.RegionResponseDTO;
 import com.example.service.RegionService;
 import com.example.util.JwtSecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

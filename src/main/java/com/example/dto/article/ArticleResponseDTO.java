@@ -1,16 +1,16 @@
-package com.example.dto;
+package com.example.dto.article;
 
 import com.example.dto.attach.AttachResponseDTO;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
 @Getter
 @Setter
-public class ArticleShortInfoDTO {
-    private String id;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class ArticleResponseDTO {
+    private String  id;
     private String title;
     private String description;
     private AttachResponseDTO image;
-    private LocalDateTime publishedDate;
 }

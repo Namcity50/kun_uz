@@ -46,7 +46,7 @@ public class EmailHistoryService {
         LocalDateTime dateFrom = LocalDateTime.of(date, LocalTime.MIN);
         LocalDateTime dateTo = LocalDateTime.of(date, LocalTime.MAX);
 
-        List<EmailHistoryEntity> list = emailHistoryRepository.findByCreatedDataBetween(dateFrom,dateTo);
+        List<EmailHistoryEntity> list = emailHistoryRepository.findByCreatedDataBetween(dateFrom, dateTo);
         List<EmailHistoryDTO> dtoList = new LinkedList<>();
         for (EmailHistoryEntity entity : list) {
             EmailHistoryDTO dto = new EmailHistoryDTO();
@@ -59,10 +59,10 @@ public class EmailHistoryService {
         return dtoList;
     }
 
-    public Page<EmailHistoryDTO> getPagination(Integer id, Integer page, Integer size) {
+    public Page<EmailHistoryDTO> getPagination(Integer page, Integer size) {
         Sort sort = Sort.by(Sort.Direction.DESC, "CreatedDate");
         Pageable pageable = PageRequest.of(page, size, sort);
-        Page<EmailHistoryEntity> entityPage = emailHistoryRepository.findAll(id, pageable);
+        Page<EmailHistoryEntity> entityPage = emailHistoryRepository.findAllBy(pageable);
         Long totalCount = entityPage.getTotalElements();
         List<EmailHistoryEntity> entityList = entityPage.getContent();
         List<EmailHistoryDTO> dtoList = new LinkedList<>();

@@ -29,6 +29,4 @@ public class AuthController {
     public ResponseEntity<RegistrationResponseDTO> emailVerification(@PathVariable("jwt") String jwt) {
         return ResponseEntity.ok(authService.emailVerification(jwt));
     }
-
-
 }

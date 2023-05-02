@@ -26,11 +26,10 @@ public class EmailHistoryController {
         return ResponseEntity.ok(emailHistoryService.getDate(date));
     }
    @GetMapping("/getByPegination")
-    public ResponseEntity<Page<EmailHistoryDTO>> getPage(@RequestParam("id") Integer id,
-                                                         @RequestParam(value = "page",defaultValue = "0") Integer page,
+    public ResponseEntity<Page<EmailHistoryDTO>> getPage(@RequestParam(value = "page",defaultValue = "0") Integer page,
                                                          @RequestParam(value = "size",defaultValue = "10") Integer size,
                                                          @RequestHeader("Authorization") String auth){
        JwtUtil.getJwtDTO(auth,ProfileRole.ADMIN);
-       return ResponseEntity.ok(emailHistoryService.getPagination(id,page,size));
+       return ResponseEntity.ok(emailHistoryService.getPagination(page,size));
    }
 }

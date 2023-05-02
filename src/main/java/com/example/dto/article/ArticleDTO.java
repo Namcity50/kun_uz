@@ -1,31 +1,29 @@
-package com.example.dto;
+package com.example.dto.article;
 
-import com.example.enums.ProfileRole;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.util.List;
+
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ArticleDTO {
 
     private String id;
-    @Size(min = 10, max = 225, message = "Title must be between 10 and 225 characters")
+    @Size(min = 1, max = 225, message = "Title must be between 10 and 225 characters")
     private String title;
     private String description;
     private String content;
-    private Long shared_count;
     private String imageId;
     private Integer regionId;
+    private Integer tagId;
     private Integer categoryId;
     private Integer moderatorId;
-    private Integer publisherId;
-    private ProfileRole status; //(Published,NotPublished)
-    private LocalDateTime created_date;
-    private LocalDateTime published_date;
-    private Boolean visible;
-    private Long view_count;
+    private List<Integer> typeList;
+
 
 //    @Getter
 //    @Setter

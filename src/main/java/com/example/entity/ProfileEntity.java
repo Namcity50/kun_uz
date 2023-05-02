@@ -28,6 +28,11 @@ public class ProfileEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private GeneralStatus status;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "image_id")
+    private AttachEntity image;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private ProfileRole role;
@@ -37,5 +42,5 @@ public class ProfileEntity {
     private LocalDateTime createdDate = LocalDateTime.now();
     @Column(name = "prt_id")
     private Integer prtId;
-    // photo_id
+
 }

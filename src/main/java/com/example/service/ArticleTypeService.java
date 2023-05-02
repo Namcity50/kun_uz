@@ -1,8 +1,8 @@
 package com.example.service;
 
 import com.example.mapper.ArticleTypeMapperDTO;
-import com.example.dto.ArticleResponseDTO;
-import com.example.dto.ArticleTypeDTO;
+import com.example.dto.articleType.ArticleTypeResponseDTO;
+import com.example.dto.articleType.ArticleTypeDTO;
 import com.example.entity.ArticleTypeEntity;
 import com.example.exps.AppBadRequestException;
 import com.example.repository.ArticleTypeRepository;
@@ -86,11 +86,11 @@ public class ArticleTypeService {
 
     }
 
-    public List<ArticleResponseDTO> getLang( String lang) {
+    public List<ArticleTypeResponseDTO> getLang(String lang) {
         List<ArticleTypeMapperDTO> list = articleTypeRepository.findByIdAndLang(lang);
-        List<ArticleResponseDTO> dtoList = new LinkedList<>();
+        List<ArticleTypeResponseDTO> dtoList = new LinkedList<>();
         list.forEach(articleTypeMapperDTO -> {
-            ArticleResponseDTO dto = new ArticleResponseDTO();
+            ArticleTypeResponseDTO dto = new ArticleTypeResponseDTO();
             dto.setId(articleTypeMapperDTO.getId());
             dto.setKey(articleTypeMapperDTO.getKey());
             dto.setLang(articleTypeMapperDTO.getName());
@@ -99,5 +99,16 @@ public class ArticleTypeService {
 
 
        return dtoList;
+    }
+    public ArticleTypeDTO getArticleTypeDTO(Integer id){
+        ArticleTypeEntity entity =  isValidArticleType(id);
+        ArticleTypeDTO dto = new ArticleTypeDTO();
+        dto.setId(entity.getId());
+        dto.setNameUz(entity.getNameUz());
+        dto.setNameEng(entity.getNameEng());
+        dto.setNameRu(entity.getNameRu());
+        dto.setVisible(entity.getVisible());
+        dto.setCreatedDate(entity.getCreatedDate());
+        return dto;
     }
 }

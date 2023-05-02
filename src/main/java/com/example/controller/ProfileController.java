@@ -1,7 +1,8 @@
 package com.example.controller;
 
-import com.example.dto.ProfileDTO;
 import com.example.dto.jwt.JwtDTO;
+import com.example.dto.profile.ProfileDTO;
+import com.example.dto.profile.ProfileRequestCustomDTO;
 import com.example.enums.ProfileRole;
 import com.example.service.ProfileService;
 import com.example.util.JwtSecurityUtil;
@@ -48,5 +49,16 @@ public class ProfileController {
                                               @RequestHeader("Authorization") String auth) {
         JwtSecurityUtil.authorization(auth);
         return ResponseEntity.ok(profileService.deleteById(id));
+    }
+    @DeleteMapping("/updatePhoto")
+    public ResponseEntity<?> updatePhoto(@RequestParam("id") Integer id,
+                                               @RequestBody ProfileDTO dto){
+        return ResponseEntity.ok(profileService.updatePhoto(id,dto));
+
+    }
+    @PostMapping(value = "/filter")
+    public ResponseEntity<?> filter(@RequestBody ProfileRequestCustomDTO filterDTO) {
+        profileService.filter(filterDTO);
+        return ResponseEntity.ok().build();
     }
 }

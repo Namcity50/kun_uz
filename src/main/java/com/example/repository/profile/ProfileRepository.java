@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.repository.profile;
 
 import com.example.entity.ProfileEntity;
 import org.springframework.data.domain.Page;
@@ -11,7 +11,6 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity,Integer>
     Optional<ProfileEntity> findByEmailAndPasswordAndVisible(String login, String password, boolean b);
 
     Page<ProfileEntity> findAll(Pageable pageable);
-    Optional<ProfileEntity> findByEmailAndPhone(String email, String phone);
 
     Optional<ProfileEntity> findByEmail(String email);
 }

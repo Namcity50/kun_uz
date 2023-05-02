@@ -1,11 +1,8 @@
 package com.example.controller;
 
-import com.example.dto.CategoryDTO;
-import com.example.dto.CategoryResponseDTO;
-import com.example.dto.RegionDTO;
-import com.example.dto.RegionResponseDTO;
+import com.example.dto.category.CategoryDTO;
+import com.example.dto.category.CategoryResponseDTO;
 import com.example.service.CategoryService;
-import com.example.service.RegionService;
 import com.example.util.JwtSecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

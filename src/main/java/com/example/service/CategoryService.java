@@ -1,14 +1,11 @@
 package com.example.service;
 
-import com.example.dto.CategoryDTO;
-import com.example.dto.CategoryResponseDTO;
-import com.example.dto.RegionResponseDTO;
+import com.example.dto.category.CategoryDTO;
+import com.example.dto.category.CategoryResponseDTO;
 import com.example.entity.CategoryEntity;
 import com.example.exps.ItemNotFoundException;
 import com.example.mapper.CategoryMapperDTO;
-import com.example.mapper.RegionMapperDTO;
 import com.example.repository.CategoryRepository;
-import com.example.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -88,6 +85,14 @@ public class CategoryService {
             dtoList.add(dto);
         });
         return dtoList;
+    }
+    public CategoryResponseDTO getLang(Integer id,String lang){
+        CategoryMapperDTO mapperDTOS = categoryRepository.findByIdAndLang(id,lang);
+            CategoryResponseDTO dto = new CategoryResponseDTO();
+            dto.setId(mapperDTOS.getId());
+            dto.setKey(mapperDTOS.getKey());
+            dto.setLang(mapperDTOS.getName());
+        return dto;
     }
 }
 

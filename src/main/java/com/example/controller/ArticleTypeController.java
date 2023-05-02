@@ -1,7 +1,7 @@
 package com.example.controller;
 
-import com.example.dto.ArticleResponseDTO;
-import com.example.dto.ArticleTypeDTO;
+import com.example.dto.articleType.ArticleTypeResponseDTO;
+import com.example.dto.articleType.ArticleTypeDTO;
 import com.example.service.ArticleTypeService;
 import com.example.util.JwtSecurityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class ArticleTypeController {
         return ResponseEntity.ok(articleTypeService.getAll(page,size));
     }
     @GetMapping("/getLang")
-    public ResponseEntity<List<ArticleResponseDTO>> getLang( @RequestParam("lang") String lang){
+    public ResponseEntity<List<ArticleTypeResponseDTO>> getLang(@RequestParam("lang") String lang){
         return ResponseEntity.ok(articleTypeService.getLang(lang));
     }
 

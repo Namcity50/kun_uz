@@ -9,7 +9,7 @@ import com.example.enums.GeneralStatus;
 import com.example.enums.ProfileRole;
 import com.example.exps.AppBadRequestException;
 import com.example.exps.ItemNotFoundException;
-import com.example.repository.ProfileRepository;
+import com.example.repository.profile.ProfileRepository;
 import com.example.util.JwtUtil;
 import com.example.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +23,6 @@ public class AuthService {
     private ProfileRepository profileRepository;
     @Autowired
     private MailSenderService mailSenderService;
-    @Autowired
-    private EmailHistoryService emailHistoryService;
 
     public AuthResponseDTO login(AuthDTO dto) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndPasswordAndVisible(dto.getEmail(), MD5Util.getMd5Hash(dto.getPassword()), true);
@@ -52,11 +50,12 @@ public class AuthService {
         ProfileEntity entity = new ProfileEntity();
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
-        entity.setRole(ProfileRole.USER);
         entity.setPhone(dto.getPhone());
         entity.setEmail(dto.getEmail());
         entity.setPassword(MD5Util.getMd5Hash(dto.getPassword()));
+        entity.setRole(ProfileRole.USER);
         entity.setStatus(GeneralStatus.REGISTER);
+
         // send email
         mailSenderService.sendRegistrationEmailMime(dto.getEmail());
         // save

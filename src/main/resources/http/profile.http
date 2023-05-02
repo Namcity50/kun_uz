@@ -49,3 +49,11 @@ Content-Type:  application/json
 DELETE localhost:8080/api/v1/profile/11
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODE4OTM1MDIsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODE5Nzk5MDIsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.CO_WZGhTclnIKew2MZjQ43H-6xNqIL3asLsfsRT1cXpNbpFAmITqDF7NJwT9LHn_11ey8qBUMm3yT1RG-aesQg
 Content-Type:  application/json
+
+### Course filter
+POST localhost:8080//api/v1/profile/filter
+Content-Type: application/json
+
+{
+  "name": "Ali"
+}
