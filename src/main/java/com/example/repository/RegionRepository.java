@@ -12,13 +12,17 @@ public interface RegionRepository extends CrudRepository<RegionEntity,Integer> {
     Optional<RegionEntity> findByKey(String key);
 
     Optional<RegionEntity> findByIdAndKey(Integer id, String key);
-     @Query(value = " select id as id, case ?1 when 'uz' then name_uz " +
-             " when 'en' then name_eng " +
-             " else name_ru end as name, key as key from region ",nativeQuery = true)
+     @Query(value = " select id       as id, " +
+             "        case ?1 when 'uz' then name_uz " +
+             "        when 'en' then name_eng " +
+             "        else name_ru end as name, " +
+             "        key as key from region ",nativeQuery = true)
     List<RegionMapperDTO> findByLang(String lang);
-    @Query(value = " select id as id, case ?2 when 'uz' then name_uz " +
-            " when 'en' then name_eng " +
-            " else name_ru end as name, key as key from region " +
+    @Query(value = " select id       as id, " +
+            "        case ?2 when 'uz' then name_uz " +
+            "        when 'en' then name_eng " +
+            "        else name_ru end as name, " +
+            "        key as key from region " +
             " where id = ?1 ",nativeQuery = true)
     RegionMapperDTO findByIdAndLang(Integer id, String lang);
 }

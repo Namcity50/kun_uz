@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.dto.EmailHistoryDTO;
+import com.example.dto.email.EmailHistoryDTO;
 import com.example.enums.ProfileRole;
 import com.example.service.EmailHistoryService;
 import com.example.util.JwtUtil;

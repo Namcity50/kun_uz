@@ -18,9 +18,20 @@ public class ArticleShortInfoDTO {
     private String title;
     private String description;
     private AttachResponseDTO image;
+    private LocalDate publishedDate;
     private TagDTO tag;
     private ArticleTypeDTO typeDTO;
     private CategoryResponseDTO category;
     private RegionDTO region;
-    private LocalDate publishedDate;
+
+    public ArticleShortInfoDTO() {
+    }
+
+    public ArticleShortInfoDTO(String id, String title, String description,
+                               LocalDate publishedDate) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.publishedDate = publishedDate;
+    }
 }

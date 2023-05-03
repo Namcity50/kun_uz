@@ -14,8 +14,10 @@ public interface ArticleTypeRepository extends CrudRepository<ArticleTypeEntity,
     Page<ArticleTypeEntity> findAll(Pageable pageable);
 
     Optional<ArticleTypeEntity> findByKey(String dto);
-    @Query(value = "select id as id, case  ?1 when 'uz' then name_uz " +
-            " when 'en' then name_eng else name_ru end as name , key as key  " +
+    @Query(value = "select id     as id, " +
+            "              case  ?1 when 'uz' then name_uz " +
+            "              when 'en' then name_eng else name_ru " +
+            "              end as name , key as key  " +
             " from article_type  ",nativeQuery = true)
     List<ArticleTypeMapperDTO> findByIdAndLang(String lang);
 }

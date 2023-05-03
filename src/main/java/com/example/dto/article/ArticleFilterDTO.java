@@ -10,16 +10,16 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ArticleCustomDTO {
-    private String id;
+public class ArticleFilterDTO {
     private String title;
     private Integer regionId;
     private Integer categoryId;
-    private LocalDate cratedDateFrom;
-    private LocalDate createdDateTo;
-    private LocalDate publishedDateFrom;
-    private LocalDate publishedDateTo;
+    private Integer typeId;
     private Integer moderatorId;
     private Integer publisherId;
     private ArticleStatus status;
+    private LocalDate createdDateFrom;
+    private LocalDate createdDateTo;
+    private LocalDate publishedDateFrom;
+    private LocalDate publishedDateTo;
 }

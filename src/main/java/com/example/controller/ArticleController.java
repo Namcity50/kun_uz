@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.dto.article.ArticleDTO;
+import com.example.dto.article.ArticleFilterDTO;
 import com.example.dto.article.ArticleFullInfoDTO;
 import com.example.dto.article.ArticleShortInfoDTO;
 import com.example.dto.jwt.JwtDTO;
@@ -63,10 +64,9 @@ public class ArticleController {
     public ResponseEntity<List<ArticleShortInfoDTO>> getArticles8(@RequestParam("ids") List<String> id) {
         return ResponseEntity.ok(articleService.getArticles8(id));
     }
-    @GetMapping("/getLang/{id}")
-    public ResponseEntity<ArticleFullInfoDTO> getLang(@PathVariable("id") String id,
-                                                      @RequestParam("lang") String lang) {
-        return ResponseEntity.ok(articleService.getAllByLang(id,lang));
+    @GetMapping("/getLang")
+    public ResponseEntity<List<ArticleFullInfoDTO>> getLangName(@RequestParam("lang") String lang) {
+        return ResponseEntity.ok(articleService.getAllByLang(lang));
     }
     @GetMapping("/last/{id}")
     public ResponseEntity<List<ArticleShortInfoDTO>> getLastArticle(@PathVariable("id") String id) {
@@ -107,5 +107,11 @@ public class ArticleController {
     @GetMapping("/shareCount")
     public ResponseEntity<Boolean> increaseShareCount(@RequestParam("id") String id ) {
         return ResponseEntity.ok(articleService.increaseShareCount(id));
+    }
+    @PostMapping("/filter")
+    public ResponseEntity<Page<ArticleShortInfoDTO>> filter(@RequestBody ArticleFilterDTO dto,
+                                                            @RequestParam(value = "page", defaultValue = "1") int page,
+                                                            @RequestParam(value = "size", defaultValue = "10") int size) {
+        return ResponseEntity.ok(articleService.filter(dto, page, size));
     }
 }

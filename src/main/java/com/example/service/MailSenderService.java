@@ -1,6 +1,6 @@
 package com.example.service;
 
-import com.example.dto.EmailHistoryDTO;
+import com.example.dto.email.EmailHistoryDTO;
 import com.example.util.JwtUtil;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -29,8 +29,6 @@ public class MailSenderService {
         stringBuilder.append("Link: ");
         stringBuilder.append(serverHost).append("/api/v1/auth/email/verification/");
         stringBuilder.append(JwtUtil.encode(toAccount));
-        // https://kun.uz/api/v1/auth//email/verification/dasdasdasd.asdasdad.asda
-        // localhost:8080/api/v1/auth/email/verification/dasdasdasd.asdasdad.asda
         sendEmail(toAccount, "Registration", stringBuilder.toString());
     }
 
@@ -38,18 +36,16 @@ public class MailSenderService {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("<h1 style=\"text-align: center\">Registration verification</h1>");
         stringBuilder.append("<br><br>");
-        // <p><a href="asd.dasdad.asdaasda">Click to the link to complete registration</a></p>
         stringBuilder.append("<p><a href=\"");
         stringBuilder.append(serverHost).append("/api/v1/auth/email/verification/");
         stringBuilder.append(JwtUtil.encode(toAccount)).append("\">");
         stringBuilder.append("Click to the link to complete registration</a></p>");
         sendEmailMime(toAccount, "Registration", stringBuilder.toString());
+
         EmailHistoryDTO dto = new EmailHistoryDTO();
         dto.setEmail(toAccount);
         dto.setMessage(stringBuilder.toString());
         emailHistoryService.create(dto);
-
-        //
     }
 
     private void sendEmail(String toAccount, String subject, String text) {

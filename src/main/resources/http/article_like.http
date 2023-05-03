@@ -1,0 +1,3 @@
+###
+GET http://localhost:8080/api/v1/like/article/be1c2d6a-71d2-40d1-8a9b-009e3aa7efb3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODMzNzQ0NTQsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODM0NjA4NTQsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.o0b0PlkEvPEPRTdqmsPV8Q85ccZ5hKaBbSjKa49OtuiHM1lKPvLZW0Ef8xja45toSfJE4D08Xf2YZcYEVtUk3g

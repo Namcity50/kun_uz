@@ -1,8 +1,5 @@
 package com.example.mapper;
 
-import com.example.dto.category.CategoryResponseDTO;
-import com.example.dto.region.RegionResponseDTO;
-
 import java.time.LocalDateTime;
 
 public interface ArticleFullInfoMapper {
@@ -11,8 +8,12 @@ public interface ArticleFullInfoMapper {
      String getDescription();
      String getContent();
      Long getSharedCount();
-     RegionResponseDTO getRegion();
-     CategoryResponseDTO getCategory();
+     Integer getRegionId();
+     String getRegionName();
+     Integer getCategoryId();
+     String getCategoryName();
+     Integer getTypeId();
+     String getTypeName();
      LocalDateTime getPublishedDate();
      Long getViewCount();
      Long getLikeCount();

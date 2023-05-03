@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class ArticleEntity {
-            @Id
+        @Id
         @GeneratedValue(strategy = GenerationType.UUID)
         private String id;
         @Column(name = "title", columnDefinition = "text")
@@ -31,43 +31,43 @@ public class ArticleEntity {
 
         @Column(name = "attach_id")
         private String attachId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "attach", insertable = false, updatable = false)
         private AttachEntity attach;
 
         @Column(name = "region_id")
         private Integer regionId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "region", insertable = false, updatable = false)
         private RegionEntity region;
 
         @Column(name = "category_id")
         private Integer categoryId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "category", insertable = false, updatable = false)
         private CategoryEntity category;
 
         @Column(name = "tag_id")
         private Integer tagId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "tag", insertable = false, updatable = false)
         private TagEntity tag;
 
         @Column(name = "moderator_id")
         private Integer moderatorId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "moderator", insertable = false, updatable = false)
         private ProfileEntity moderator;
 
         @Column(name = "type_id")
         private Integer typeId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "type", insertable = false, updatable = false)
         private ArticleTypeEntity type;
 
         @Column(name = "publisher_id")
         private Integer publisherId;
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "publisher", insertable = false, updatable = false)
         private ProfileEntity publisher;
 
@@ -79,6 +79,10 @@ public class ArticleEntity {
         private Boolean visible = Boolean.TRUE;
         @Column(name = "view_count")
         private Integer viewCount;
+        @Column(name = "like_count")
+        private Integer likeCount;
+        @Column(name = "dislike_count")
+        private Integer dislikeCount;
 
     }
 //    @Getter

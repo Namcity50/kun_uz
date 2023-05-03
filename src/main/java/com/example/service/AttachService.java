@@ -184,7 +184,6 @@ public class AttachService {
     }
 
     public byte[] open_general2(String attachName) {
-        // 20f0f915-93ec-4099-97e3-c1cb7a95151f.jpg
         int lastIndex = attachName.lastIndexOf(".");
         String id = attachName.substring(0, lastIndex);
         AttachEntity attachEntity = get(id);

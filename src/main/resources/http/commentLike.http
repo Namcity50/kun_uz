@@ -1,0 +1,7 @@
+### create comment like
+GET http://localhost:8080/api/v1/like/comment/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODMzNzQ0NTQsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODM0NjA4NTQsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.o0b0PlkEvPEPRTdqmsPV8Q85ccZ5hKaBbSjKa49OtuiHM1lKPvLZW0Ef8xja45toSfJE4D08Xf2YZcYEVtUk3g
+
+### create comment dislike
+GET http://localhost:8080/api/v1/like/comment/dislike/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODMzNzQ0NTQsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODM0NjA4NTQsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.o0b0PlkEvPEPRTdqmsPV8Q85ccZ5hKaBbSjKa49OtuiHM1lKPvLZW0Ef8xja45toSfJE4D08Xf2YZcYEVtUk3g

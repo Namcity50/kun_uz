@@ -1,0 +1,48 @@
+### create comment
+POST localhost:8080/api/v1/comment
+Content-Type:  application/json
+
+{
+
+  "profileId": 3,
+  "articleId": "e8ef2e14-07a3-40a6-971b-ae8a04601c8e",
+  "content": "bormisan"
+}
+
+### update comment
+PUT localhost:8080/api/v1/comment/e8ef2e14-07a3-40a6-971b-ae8a04601c8e
+Content-Type:  application/json
+
+{
+
+"profileId": 3,
+"articleId": "e8ef2e14-07a3-40a6-971b-ae8a04601c8e",
+"content": "qalisan"
+}
+
+### delete comment
+DELETE localhost:8080/api/v1/comment/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODMyODU2NzQsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODMzNzIwNzQsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.LDxjaghtL2KMFjNiTt_v2MGqy-NSh3Jr1OL3rWsBhowk7mgtIk3RWm3Zt3-rU12g4O_Qr2hI-QUfz1cz1PEoFw
+Content-Type:  application/json
+
+### getList comment
+GET localhost:8080/api/v1/comment/getList?id=e8ef2e14-07a3-40a6-971b-ae8a04601c8e
+Content-Type:  application/json
+
+### getByPagination comment
+GET localhost:8080/api/v1/comment/getByPagination?page=1&size=4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2ODMyODU2NzQsImlkIjozLCJyb2xlIjoiQURNSU4iLCJleHAiOjE2ODMzNzIwNzQsImlzcyI6Ikt1bnV6IHRlc3QgcG9ydGFsaSJ9.LDxjaghtL2KMFjNiTt_v2MGqy-NSh3Jr1OL3rWsBhowk7mgtIk3RWm3Zt3-rU12g4O_Qr2hI-QUfz1cz1PEoFw
+Content-Type:  application/json
+
+### filter comment
+POST localhost:8080/api/v1/comment/filter?page=1&size=4
+Content-Type:  application/json
+
+{
+  "profileId": 3,
+  "articleId": "e8ef2e14-07a3-40a6-971b-ae8a04601c8e"
+}
+
+### getReplyId comment
+GET localhost:8080/api/v1/comment/getListReplyId?id=1
+Content-Type:  application/json

@@ -4,7 +4,7 @@ import com.example.dto.profile.ProfileRequestCustomDTO;
 import com.example.entity.ProfileEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -14,9 +14,10 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
+@AllArgsConstructor
 public class ProfileCustomRepository {
-    @Autowired
-    private EntityManager entityManager;
+
+    private final EntityManager entityManager;
 
     public List<ProfileEntity> getAll() {
         Query query = this.entityManager.createQuery("SELECT p FROM ProfileEntity AS p ");
